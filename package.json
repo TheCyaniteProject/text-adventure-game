@@ -1,0 +1,24 @@
+{
+  "name": "soloadventure",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-led solo RPG desktop application",
+  "license": "Unlicense",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "check": "node --check electron/main.js && node --check electron/preload.cjs && node --check src/app.js"
+  },
+  "devDependencies": {
+    "electron": "^42.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.3.0",
+    "@fontsource/space-mono": "^5.3.0"
+  }
+}

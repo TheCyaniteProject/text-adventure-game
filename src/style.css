@@ -1,0 +1,317 @@
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('./fonts/space-mono-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('./fonts/space-mono-latin-700-normal.woff2') format('woff2')}
+:root{color-scheme:dark;--bg:#101216;--surface:#16191f;--line:#343b46;--text:#d4d7de;--muted:#9aa4b3;--colorA:#ff5368;--colorB:#54d995;--colorC:#569fff;font-family:'Space Mono',monospace;font-size:14px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}button,input,textarea,select{font:inherit;color:inherit;border:1px solid var(--line);border-radius:0;background:transparent}button{cursor:pointer;padding:10px 14px;transition:background 100ms,border-color 100ms}button:hover{background:#242a34;border-color:var(--colorC)}button:active{transform:translateY(1px)}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--colorC);outline-offset:3px}header{height:70px;display:flex;align-items:center;gap:28px;padding:0 32px;border-bottom:1px solid var(--line)}header>button:last-child{margin-left:auto}.brand{color:var(--colorA);border:0;font-weight:bold;font-size:22px;padding:0}.brand span{color:var(--text);font-size:14px;margin-left:18px;letter-spacing:2px}.badge{color:var(--muted);font-size:11px;letter-spacing:1px}main{max-width:1140px;margin:auto;padding:50px 32px 90px}footer{position:fixed;bottom:0;left:0;right:0;height:34px;background:var(--bg);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 24px;color:var(--muted);font-size:11px}i{display:inline-block;width:6px;height:6px;background:var(--colorB);margin-right:6px}h1{font-size:30px;font-weight:normal;margin:12px 0}h2{font-size:17px;font-weight:normal}h3{font-size:17px}p{line-height:1.8}.eyebrow{color:var(--colorC);font-size:12px;letter-spacing:2px}.muted,small{color:var(--muted)}.intro{margin-bottom:34px}.row{display:flex;align-items:center;gap:12px}.spread{justify-content:space-between}.actions{display:flex;gap:12px;flex-wrap:wrap}.primary{border-color:var(--colorB);color:var(--colorB)}.accent{border-color:var(--colorA);color:var(--colorA)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{border:1px solid var(--line);border-top:2px solid var(--colorC);padding:24px;background:var(--surface)}.card:nth-child(2n){border-top-color:var(--colorA)}.card .actions{margin-top:24px}.tag{display:inline-block;font-size:11px;color:var(--colorC);border:1px solid var(--line);padding:4px 8px;margin-right:6px}.section-title{display:flex;justify-content:space-between;margin:42px 0 16px;align-items:center}.empty{border:1px dashed var(--line);padding:28px;color:var(--muted)}.gamebar{padding-bottom:22px;border-bottom:1px solid var(--colorC);margin-bottom:26px}.tools{display:flex;gap:8px;flex-wrap:wrap}.tools button{font-size:12px;padding:8px 12px}.story{max-width:790px;margin:auto}.message{position:relative;padding:20px 0 26px;border-bottom:1px solid var(--line)}.message .meta{font-size:11px;letter-spacing:1px;color:var(--colorB)}.message.player{border-left:2px solid var(--colorA);padding-left:20px;margin-top:22px}.message.player .meta{color:var(--colorA)}.message p{font-size:16px;line-height:1.95;white-space:pre-wrap}.message-tools{display:flex;gap:8px;justify-content:flex-end}.message-tools button{font-size:11px;padding:5px 8px}.choices{display:grid;gap:10px;margin-top:28px}.choice{text-align:left;padding:15px;border-color:var(--colorB)}.choice span{color:var(--colorB);margin-right:16px}.custom{display:flex;gap:10px;margin-top:18px}.custom input{flex:1;min-width:0;padding:12px}dialog{color:var(--text);background:var(--surface);border:1px solid var(--colorC);padding:0;max-width:680px;width:calc(100% - 40px);max-height:85vh}dialog[open]{animation:open 120ms ease-out}dialog::backdrop{background:#0009}.panel-head{position:sticky;top:0;background:var(--surface);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--colorC);padding:12px 22px}.panel-head button{font-size:24px;border:0;padding:0 8px}#panel-body{padding:24px}label{display:block;color:var(--muted);font-size:12px;margin:18px 0 8px}input,textarea,select{display:block;width:100%;padding:10px;background:var(--bg)}textarea{min-height:120px;resize:vertical;line-height:1.6}input[type=checkbox]{display:inline;width:auto;margin-right:10px}form .actions{margin-top:24px}.notice{border-left:2px solid var(--colorA);padding:10px 15px;font-size:12px;line-height:1.7}.tabs{display:flex;gap:10px;margin-bottom:24px}.tabs button[aria-pressed=true]{color:var(--colorB);border-color:var(--colorB)}pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}.record{border:1px solid var(--line);padding:16px;margin:12px 0}.record b{color:var(--colorC)}@keyframes open{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media(max-width:850px){.grid{grid-template-columns:1fr}.badge{display:none}header{padding:0 18px}main{padding:30px 20px 70px}footer span:last-child{display:none}.gamebar>.row{align-items:flex-start;flex-direction:column}}
+
+/* Main menu: keep the right side open for future example cards. */
+main:has(.main-menu){max-width:none;padding:54px 7vw 70px}
+.main-menu{min-height:calc(100vh - 224px);display:flex;align-items:center}
+.menu-column{width:min(440px,100%)}
+.main-menu h1{font-size:clamp(40px,5vw,66px);font-weight:bold;line-height:1.05;letter-spacing:-2px;margin:20px 0 16px}
+.title-period{color:var(--colorA)}
+.menu-subtitle{color:var(--muted);margin:0 0 32px}
+.menu-options{display:flex;flex-direction:column;gap:13px;padding-right:20px}
+.menu-option{--menu-accent:var(--colorB);border:0;border-left:4px solid var(--menu-accent);text-align:left;padding:9px 18px;font-size:20px;transform-origin:left center;transition:transform 140ms ease-out,background 140ms ease-out,color 140ms ease-out}
+.menu-option:nth-child(3n+2){--menu-accent:var(--colorC)}
+.menu-option:nth-child(3n){--menu-accent:var(--colorA)}
+.menu-option span{display:block;color:var(--muted);font-size:11px;margin-top:7px;line-height:1.5}
+.menu-option:hover,.menu-option:focus-visible{transform:scale(1.035);border-color:var(--menu-accent);color:var(--menu-accent);background:var(--surface)}
+.menu-option:active{transform:scale(1.015)}
+.menu-note{font-size:10px;letter-spacing:1px;color:var(--muted);margin:30px 0 0}
+@media(prefers-reduced-motion:reduce){.menu-option:hover,.menu-option:focus-visible,.menu-option:active{transform:none}}
+
+.world-card{border:1px solid var(--colorC);border-top:3px solid var(--colorC);padding:22px}
+.world-card label,.starting-card label{text-transform:capitalize;letter-spacing:1px}
+.world-card input[name=title]{font-size:23px;color:var(--text);font-weight:bold}
+.world-card .card-text{min-height:76px;font-size:14px;background:transparent;border-color:var(--line)}
+.world-card .card-text[name=world-premise]{min-height:115px}
+.starting-card{border:1px solid var(--colorB);padding:22px;margin-top:22px}
+.starting-card .eyebrow{color:var(--colorB)}
+.setup-review pre{font-size:12px}
+
+/* Setup pages use the available height, with independently scrolling content. */
+dialog.setup-panel{height:90vh;max-height:90vh;width:min(820px,calc(100% - 40px));overflow:hidden}
+dialog.setup-panel[open]{display:flex;flex-direction:column}
+.setup-panel .panel-head{flex-shrink:0}
+.setup-panel #panel-body{flex:1;overflow-y:auto;min-height:0;padding:28px}
+.setup-panel #premise{min-height:240px}
+.setup-panel .starting-card:first-of-type{margin-top:24px}
+.setup-panel .setup-review>.actions:last-child{position:sticky;bottom:-28px;background:var(--surface);border-top:1px solid var(--line);padding:16px 0;margin-bottom:-12px}
+
+/* Setup actions stay in a separate bottom bar, outside scrolling content. */
+.setup-panel #panel-body{display:flex;flex-direction:column;overflow:hidden;padding:0}
+.setup-panel #panel-body>form{display:flex;flex-direction:column;flex:1;min-height:0}
+.setup-content{flex:1;min-height:0;overflow-y:auto;padding:28px}
+.setup-panel form>.setup-footer,.setup-panel .setup-review>.actions:last-child{position:static;flex-shrink:0;margin:0;padding:18px 28px;border-top:1px solid var(--line);background:var(--surface);align-items:center}
+.setup-footer select{width:auto;max-width:160px}
+.setup-footer .primary{margin-left:auto}
+.final-review-panel{width:min(1440px,calc(100% - 64px))!important;max-width:calc(100% - 64px)}
+.final-review .setup-content{overflow:hidden;display:flex}
+.review-columns{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;flex:1;min-height:0}
+.review-world,.review-cast{overflow-y:auto;min-height:0;padding-right:12px;overflow-wrap:anywhere}
+.review-world{border-left:3px solid var(--colorC);padding-left:22px}
+.review-world h1{font-size:26px}
+.review-world h3{text-transform:capitalize;color:var(--colorC);margin-top:26px}
+.review-world p,.review-cast p{white-space:pre-wrap}
+.review-cast .starting-card{margin-top:16px;padding:18px}
+@media(max-width:650px){.review-columns{grid-template-columns:1fr}.review-world,.review-cast{max-height:38vh}.final-review .setup-content{overflow-y:auto}.setup-footer select{max-width:120px}.setup-footer{gap:8px}}
+
+/* Main menu is deliberately spare; accent bars activate on interaction. */
+main:has(.main-menu){padding-top:60px}
+.main-menu{min-height:calc(100vh - 164px)}
+.menu-options{gap:18px}
+.menu-option{border-left-color:var(--muted);padding:15px 22px;transition:transform 140ms ease-out,background 140ms ease-out,color 140ms ease-out,border-color 140ms ease-out}
+.menu-option:hover,.menu-option:focus-visible{border-left-color:var(--menu-accent)}
+
+/* Terminal title above a bottom-left game menu; footer keeps its own space. */
+:root{font-family:'Space Mono',monospace}
+pre,code{font-family:inherit}
+main:has(.main-menu){padding:32px 40px 66px}
+.main-menu{min-height:calc(100dvh - 98px);flex-direction:column;align-items:flex-start;gap:40px}
+.main-menu h1{font-size:clamp(24px,3vw,36px);font-weight:normal;line-height:1.3;letter-spacing:0;margin:0;color:var(--text)}
+.menu-column{margin-top:auto}
+@media(max-width:650px){main:has(.main-menu){padding:24px 24px 58px}.main-menu{min-height:calc(100dvh - 82px)}}
+
+.main-menu h1{font-size:clamp(32px,4.5vw,58px)}
+.title-cursor{animation:cursor-blink 1.1s steps(1,end) infinite}
+@keyframes cursor-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.title-cursor{animation:none}}
+
+.main-menu h1{margin-top:20px;padding-left:16px}
+
+/* Three choices per row; a partial second row shares the full row width. */
+.choices{grid-template-columns:repeat(6,minmax(0,1fr))}
+.choice{grid-column:span 2;min-width:0;overflow-wrap:anywhere}
+.choice:nth-child(4):last-child{grid-column:span 6}
+.choices:has(>.choice:nth-child(5):last-child)>.choice:nth-child(n+4){grid-column:span 3}
+
+/* The transcript scrolls independently above the bottom composer. */
+main:has(.story-chat){height:calc(100dvh - 34px);max-width:1200px;padding:0 32px;margin:auto}
+.story-chat{height:100%;max-width:none;display:flex;flex-direction:column;min-height:0}
+.chat-log{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:24px;padding:32px 12px 24px;scrollbar-gutter:stable}
+.story-chat .message{flex-shrink:0;max-width:80%;padding:16px 20px;border:1px solid var(--line);margin:0;overflow-wrap:anywhere}
+.story-chat .message p{margin:0;font-size:15px;line-height:1.85}
+.story-chat .narrator{align-self:flex-start;border-left:2px solid var(--colorC);background:var(--surface)}
+.story-chat .player{align-self:flex-end;border-left:1px solid var(--line);border-right:2px solid var(--colorA);background:var(--bg)}
+.story-input{flex-shrink:0;border-top:1px solid var(--line);padding:18px 0 24px;background:var(--bg)}
+.story-input:empty{display:none}
+.story-input .choices{margin-top:0}
+.story-input .custom{margin-top:12px}
+@media(max-width:650px){main:has(.story-chat){padding:0 16px}.chat-log{padding:20px 0}.story-chat .message{max-width:92%;padding:12px}.story-input{padding-bottom:16px}}
+
+/* Compact story chrome and independently collapsible side trays. */
+main:has(.game-screen){max-width:none;height:calc(100dvh - 34px);padding:0;margin:0}
+.game-screen{height:100%;display:flex;flex-direction:column;min-height:0}
+header.story-header{height:34px;min-height:34px;padding:0 16px;gap:16px;font-size:12px;border-bottom:1px solid var(--line)}
+.story-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.story-header button{height:33px;padding:0 12px;border-width:0 0 0 1px;font-size:11px;flex-shrink:0}
+.game-workspace{display:flex;flex:1;min-height:0}
+.game-workspace>.story-chat{flex:1;min-width:0;padding:0 24px}
+.game-tray{display:flex;flex-shrink:0;width:30px;min-height:0;overflow:hidden;background:var(--surface);transition:width 140ms ease-out}
+.game-tray.is-open{width:250px}
+.left-tray{border-right:1px solid var(--line);flex-direction:row-reverse}
+.right-tray{border-left:1px solid var(--line)}
+.tray-toggle{flex-shrink:0;width:29px;border:0;padding:0;align-self:stretch;color:var(--muted);font-size:20px}
+.tray-content{flex:1;min-width:0;overflow-y:auto;padding:12px;overflow-wrap:anywhere}
+.tray-content[hidden]{display:none}
+.tray-content h2{font-size:12px;color:var(--colorC);margin:6px 0 24px}
+.tray-content h3{font-size:12px;color:var(--colorB);margin:24px 0 8px}
+.tray-content h4{font-size:12px;margin:12px 0 6px}
+.tray-content p{font-size:12px;white-space:pre-wrap}
+.tray-content>button{display:block;width:100%;text-align:left;margin:0 0 10px;font-size:11px}
+.inventory-record{border-top:1px solid var(--line);padding-top:4px}
+.story-chat .message-tools{margin-top:12px}
+.story-chat .message-tools button{color:var(--muted)}
+.story-chat .message-tools button[data-action=reroll]{font-size:18px;line-height:1;padding:4px 8px;color:var(--colorB)}
+@media(max-width:1000px){.game-tray.is-open{width:190px}.game-workspace>.story-chat{padding:0 12px}.game-workspace .choice{padding:10px;font-size:12px}}
+
+/* Message actions belong to the message, below its bordered text block. */
+.story-chat .message{padding:0;border:0;background:transparent}
+.message-block{padding:16px 20px;border:1px solid var(--line);background:var(--surface)}
+.narrator .message-block{border-left:2px solid var(--colorC)}
+.player .message-block{border-right:2px solid var(--colorA);background:var(--bg)}
+.story-chat .message-tools{margin-top:6px;gap:4px;justify-content:flex-start}
+.story-chat .player .message-tools{justify-content:flex-end}
+.story-chat .message-tools button{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:5px;border-color:transparent}
+.message-tools svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.story-chat .message-tools button:hover{color:var(--text);border-color:var(--line)}
+@media(max-width:650px){.story-chat .message{padding:0}.message-block{padding:12px}}
+
+/* Collectible-card framing, rendered with flat colors and crisp line art. */
+.character-card{width:100%;max-width:340px;margin:18px auto;border:2px solid var(--colorC);padding:8px;background:var(--bg);box-sizing:border-box;overflow:hidden}
+.card-nameplate{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);padding:9px 10px}
+.character-card .card-nameplate h2{font-size:16px;color:var(--text);margin:0;overflow-wrap:anywhere}
+.card-nameplate>span{font-size:11px;color:var(--colorA)}
+.card-portrait{position:relative;margin:7px 0;border:1px solid var(--colorC);height:170px;display:flex;align-items:center;justify-content:center;background:var(--surface)}
+.card-portrait svg{width:90%;height:90%;fill:none;stroke:var(--colorC);stroke-width:1.5}
+.portrait-label,.portrait-caption{position:absolute;font-size:8px;letter-spacing:1px;color:var(--muted);background:var(--surface);padding:2px 4px}
+.portrait-label{top:5px;left:5px}.portrait-caption{bottom:5px;right:5px}
+.card-type{border:1px solid var(--colorB);padding:6px 8px;color:var(--colorB);font-size:10px;overflow-wrap:anywhere}
+.card-description{border:1px solid var(--line);padding:10px;margin-top:7px;min-height:96px;overflow-wrap:anywhere}
+.character-card .card-description p{font-size:11px;line-height:1.7;margin:0;white-space:pre-wrap}
+.card-extra{border-top:1px solid var(--line);padding-top:8px;margin-top:8px!important;color:var(--muted)}
+.card-bottom{display:flex;justify-content:space-between;gap:8px;font-size:8px;color:var(--muted);padding:9px 2px 0}
+.generation-card-preview{margin:18px 0}
+.left-tray.is-open{width:320px}
+.information-layout{display:flex;flex-direction:column;gap:14px;padding:12px;overflow:hidden}
+.active-character{flex-shrink:0}
+.active-character>label{margin:0 0 8px;font-size:10px;color:var(--colorC)}
+.active-character>select{font-size:11px;padding:6px;margin-bottom:8px}
+.compact-card{margin:0;max-width:none;padding:6px}
+.compact-card .card-nameplate{padding:6px 8px}
+.compact-card .card-nameplate h2{font-size:13px}
+.compact-card .card-portrait{height:95px}
+.compact-card .card-description{min-height:0;max-height:75px;overflow-y:auto;padding:8px}
+.compact-card .card-description p{font-size:10px}
+.inventory-section{display:flex;flex-direction:column;flex:1;min-height:70px}
+.information-layout h3{margin:0 0 8px;font-size:11px}
+.inventory-section h3{display:flex;justify-content:space-between}
+.inventory-section h3 span{color:var(--muted)}
+.inventory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow-y:auto;min-height:0;align-content:start;padding-right:4px}
+.inventory-slot{border:1px solid var(--line);min-height:66px;padding:8px;display:flex;flex-direction:column;gap:7px;font-size:10px;overflow-wrap:anywhere}
+.slot-number{font-size:8px;color:var(--colorC)}
+.location-summary{flex-shrink:0;border-top:1px solid var(--colorC);padding-top:12px}
+.location-summary p{margin:0 0 6px}
+.location-summary small{font-size:9px}
+@media(max-height:760px){.compact-card .card-portrait{height:60px}.compact-card .card-description{max-height:48px}.information-layout{gap:10px}}
+@media(max-width:1000px){.left-tray.is-open{width:270px}}
+
+/* Portrait-oriented trading cards share standard 2.5 × 3.5 proportions. */
+.character-card,.story-card{aspect-ratio:5/7;display:flex;flex-direction:column;min-height:0}
+.character-card .card-portrait{flex:1;min-height:70px;height:auto}
+.character-card .card-description{flex:0 1 auto;max-height:28%;min-height:60px;overflow-y:auto}
+.character-card .card-bottom{flex-shrink:0}
+.compact-card .card-description{min-height:38px;max-height:60px}
+.compact-card .card-portrait{min-height:60px;height:auto}
+.story-card{width:100%;max-width:380px;margin:18px auto;border:2px solid var(--colorA);padding:8px;background:var(--bg);overflow:hidden}
+.story-card .card-nameplate h2{font-size:16px;margin:0;overflow-wrap:anywhere}
+.world-art{position:relative;flex:1;min-height:100px;border:1px solid var(--colorA);margin:7px 0;display:flex;align-items:center;justify-content:center;background:var(--surface)}
+.world-art svg{width:100%;height:100%;max-height:190px;fill:none;stroke:var(--colorA);stroke-width:1.5}
+.world-art>span{position:absolute;bottom:5px;right:7px;font-size:8px;color:var(--muted)}
+.story-card-copy{flex:0 1 45%;overflow-y:auto;min-height:60px;padding:8px;border:1px solid var(--line);margin-top:7px;overflow-wrap:anywhere}
+.story-card .story-card-copy h3{font-size:10px;text-transform:capitalize;color:var(--colorC);margin:10px 0 4px}
+.story-card .story-card-copy p{font-size:11px;line-height:1.7;white-space:pre-wrap;margin:0}
+.card-actions{display:flex;gap:8px;padding-top:8px;flex-shrink:0}.card-actions button{font-size:10px;flex:1;padding:8px}
+.review-world{border:0;padding-left:0}
+.review-world .story-card{max-width:440px}
+.review-world .story-card h1{font-size:20px}
+.library-panel{width:min(1280px,calc(100% - 48px));max-width:calc(100% - 48px);height:90vh}
+.library-toolbar{display:flex;justify-content:flex-end;margin-bottom:16px}
+.library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;align-items:start}
+.library-grid .story-card{margin:0;max-width:none}
+.card-icon-button{display:inline-flex;align-items:center;justify-content:center;width:28px;height:30px;padding:4px;color:var(--colorC);cursor:pointer;border:1px solid var(--line);background:var(--bg)}
+.card-icon-button svg{width:18px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
+.speaker-controls{display:flex;gap:6px;margin-bottom:10px}
+.story-input{position:relative;padding-right:40px}
+.actor-picker{position:absolute;right:0;top:18px;z-index:2}
+.actor-picker>summary{list-style:none}.actor-picker>summary::-webkit-details-marker{display:none}
+.actor-picker[open]>summary{border-color:var(--colorB)}
+.actor-dropdown{position:absolute;bottom:calc(100% + 10px);right:0;width:240px;padding:14px;background:var(--surface);border:1px solid var(--colorC)}
+.actor-dropdown label{margin:0 0 10px}
+@media(max-height:760px){.left-tray .compact-card{max-width:210px;margin:0 auto}}
+
+/* Speaker cards sit above, outside the message border. */
+.speaker-controls{justify-content:flex-start;margin:0 0 6px}
+.player .speaker-controls{justify-content:flex-end}
+
+#character-hover{position:fixed;inset:auto;margin:0;padding:0;border:0;background:transparent;color:var(--text);width:min(280px,calc(100vw - 16px));max-height:calc(100dvh - 16px);overflow:auto}
+#character-hover .character-card{margin:0}
+
+.card-icon-button{color:var(--muted);border:0;background:transparent}
+.card-icon-button:hover,.card-icon-button:focus-visible{color:var(--text);background:transparent;border:0}
+.actor-picker[open]>summary{color:var(--text);border:0}
+
+/* Full-window editors: browse cards first, then edit beside a live preview. */
+dialog.editor-panel{inset:0;margin:0;width:100vw;max-width:none;height:100dvh;max-height:none;border:0;display:none}
+dialog.editor-panel[open]{display:flex;flex-direction:column}
+.editor-panel .panel-head{flex-shrink:0}
+.editor-panel #panel-body{flex:1;min-height:0;overflow:auto;padding:24px 32px;display:flex;flex-direction:column}
+.editor-tabs{display:flex;gap:12px;flex-shrink:0;border-bottom:1px solid var(--line);padding-bottom:16px}
+.editor-tabs button[aria-selected=true]{color:var(--colorB);border-color:var(--colorB)}
+.character-library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,300px));gap:28px;align-content:start;padding:24px 0;flex:1}
+.editable-card .character-card{margin:0;max-width:none}
+.editable-card>button{width:100%;margin-top:8px}
+.editor-bottom{display:flex;gap:12px;padding:16px 0 0;border-top:1px solid var(--line);flex-shrink:0;background:var(--surface)}
+.editor-bottom .primary{margin-left:auto}
+#card-editor{display:flex;flex-direction:column;flex:1;min-height:0}
+.card-editor-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:48px;flex:1;min-height:0;overflow:hidden}
+.card-editor-fields{overflow-y:auto;padding:12px 16px 24px 0}
+.card-editor-fields label{text-transform:capitalize}
+.card-editor-preview{overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:16px}
+.card-editor-preview .character-card{max-width:400px;margin:0}
+.editor-panel #lore-form,.editor-panel #state-form{flex:1;display:flex;flex-direction:column;min-height:0}
+.editor-panel #lore-form textarea,.editor-panel #state-form textarea{flex:1;min-height:200px}
+@media(max-width:700px){.card-editor-columns{grid-template-columns:1fr;overflow-y:auto}.card-editor-fields,.card-editor-preview{overflow:visible}.editor-panel #panel-body{padding:16px}.character-library-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+
+.editor-panel .editor-tabs{position:sticky;top:-24px;z-index:1;background:var(--surface);padding-top:8px}
+.editor-panel #edit-form{flex:1;display:flex;flex-direction:column;min-height:0}
+.editor-panel #edit-form textarea{flex:1;min-height:200px}
+
+/* Keep editor previews out of flex sizing so the card cannot be squeezed. */
+.card-editor-preview{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;justify-items:center}
+.card-editor-preview .character-card{width:min(100%,400px);height:auto;aspect-ratio:5/7;flex:none;align-self:start;justify-self:center}
+.card-editor-preview .card-portrait{min-height:0;flex:1 1 0}
+.card-editor-preview .card-nameplate,.card-editor-preview .card-type,.card-editor-preview .card-bottom{flex-shrink:0}
+.editable-card>.edit-card-icon{display:flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;margin:8px 0 0 auto;color:var(--muted);border-color:transparent}
+.edit-card-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.editable-card>.edit-card-icon:hover{color:var(--text);border-color:var(--line)}
+
+/* MTG-inspired field balance: art occupies about 42% of the inner card. */
+.character-card{display:grid;grid-template-rows:auto 42% auto minmax(0,1fr) auto;gap:6px}
+.character-card .card-nameplate{padding:6px 8px;min-width:0}
+.character-card .card-portrait,.card-editor-preview .card-portrait{height:auto;min-height:0;margin:0}
+.character-card .card-type{padding:5px 8px}
+.character-card .card-description{min-height:0;max-height:none;margin:0;overflow-y:auto;padding:9px}
+.character-card .card-bottom{padding:3px 2px 0}
+.compact-card{gap:4px}
+.compact-card .card-description{padding:6px}
+.compact-card .card-type{padding:4px 6px;font-size:9px}
+
+/* Descendant cqw units use this card's own width in every context. */
+.character-card{container-type:inline-size;container-name:character-card}
+.character-card .card-nameplate{padding:1.9cqw 2.5cqw;gap:2.5cqw}
+.character-card .card-nameplate h2{font-size:5cqw;line-height:1.3}
+.character-card .card-nameplate>span{font-size:3.45cqw}
+.character-card .card-type{font-size:3.15cqw;line-height:1.4;padding:1.55cqw 2.5cqw}
+.character-card .card-description{padding:2.8cqw}
+.character-card .card-description p{font-size:3.45cqw;line-height:1.7}
+.character-card .card-extra{padding-top:2.5cqw;margin-top:2.5cqw!important}
+.character-card .card-bottom{font-size:2.5cqw;line-height:1.4;gap:2.5cqw;padding:0.95cqw 0.6cqw 0}
+.character-card .portrait-label,.character-card .portrait-caption{font-size:2.5cqw;letter-spacing:0.3cqw;padding:0.6cqw 1.25cqw}
+.character-card .portrait-label{top:1.55cqw;left:1.55cqw}
+.character-card .portrait-caption{bottom:1.55cqw;right:1.55cqw}
+
+.settings-adventure-actions{border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+.settings-adventure-actions h3{font-size:12px;color:var(--muted)}
+
+.story-header .pause-trigger{width:36px;display:flex;align-items:center;justify-content:center;padding:7px;color:var(--muted)}
+.pause-trigger svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}
+.pause-panel{max-width:360px}
+.pause-options{display:flex;flex-direction:column;gap:14px;padding:6px 0 12px}
+.pause-options button{text-align:left;padding:14px 18px;border-left-width:3px}
+
+.story-input.is-waiting{padding-right:0;min-height:160px;display:flex;align-items:center;justify-content:center}
+.response-wait{width:3ch;font-size:26px;color:var(--muted)}
+.response-wait>span{display:block;overflow:hidden;white-space:nowrap;width:1ch;animation:waiting-dots 1.2s steps(1,end) infinite}
+@keyframes waiting-dots{0%,100%{width:1ch}33%{width:2ch}66%{width:3ch}}
+@media(prefers-reduced-motion:reduce){.response-wait>span{animation:none;width:3ch}}
+
+/* Flat, square scrollbars across chat, trays, editors, and card text. */
+*{scrollbar-width:thin;scrollbar-color:var(--line) var(--bg)}
+@supports selector(::-webkit-scrollbar){
+  *{scrollbar-width:auto;scrollbar-color:auto}
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--line);border:2px solid var(--bg);border-radius:0}
+  ::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+  ::-webkit-scrollbar-thumb:active{background:var(--colorC)}
+  ::-webkit-scrollbar-corner{background:var(--bg)}
+  ::-webkit-scrollbar-button{display:none;width:0;height:0}
+}
+@media(forced-colors:active){*{scrollbar-color:auto}}
+
+/* Reserve each tray's expanded width so the conversation never shifts. */
+.game-workspace{display:grid;grid-template-columns:320px minmax(0,1fr) 250px}
+.game-workspace>.left-tray{justify-self:start}
+.game-workspace>.right-tray{justify-self:end}
+.game-workspace>.story-chat{width:100%;margin:0}
+@media(max-width:1000px){.game-workspace{grid-template-columns:270px minmax(0,1fr) 190px}}
