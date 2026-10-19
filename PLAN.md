@@ -170,6 +170,7 @@ The app uses a cyberpunk terminal aesthetic: a dark background, light-gray text,
 - Treat the three accents as abstract theme tokens (`colorA`, `colorB`, and `colorC`) that happen to be red, green, and blue in the default theme. Assign them consistently to UI contexts and components; they are not restricted to universal status meanings. Red can appear on ordinary frames and controls, not only warnings.
 - Aim for a vibrant interface through deliberate use of all three accents while preserving the minimal layout and readable story text.
 - Keep the overall appearance clean and flat: no gradients, bloom, glow, or decorative visual effects.
+- Frame styling follows text-terminal/TUI conventions: thin square outlines without overlaid corner glyphs, bracketed text controls and panel labels, and dashed separators. Preserve the established Space Mono typography, accent palette, card proportions, and layout.
 - Allow short, responsive interaction animations for clicks and trays opening or closing. Motion should provide immediate feedback and never delay input or navigation; avoid ambient or ornamental animation. Respect reduced-motion preferences.
 - User-selectable themes are a future feature. Keep styling token-based from the outset so later themes can replace the palette without changing component behavior.
 - Keep supporting tools tucked into trays and submenus rather than permanently filling the gameplay view with panels.
